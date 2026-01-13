@@ -1,14 +1,18 @@
 {
-  "name": "productivity-bot",
+  "name": "telegram-bot",
   "version": "1.0.0",
   "description": "Telegram бот для повышения продуктивности",
   "main": "index.js",
   "type": "module",
+  "homepage": "https://github.com/kholodolga.github.io/telegram-bot",
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
+    "build": "rm -rf dist && mkdir -p dist && cp index.js database.js package.json package-lock.json dist/ && echo '✅ Build completed: dist/'",
     "stop": "pkill -f 'node index.js' || true",
-    "restart": "npm run stop && sleep 1 && npm start"
+    "restart": "npm run stop && sleep 1 && npm start",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "telegram",
@@ -18,9 +22,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "telegraf": "^4.16.3",
+    "better-sqlite3": "^11.6.0",
     "dotenv": "^16.4.5",
-    "better-sqlite3": "^11.6.0"
+    "gh-pages": "^6.3.0",
+    "telegraf": "^4.16.3"
   }
 }
-
