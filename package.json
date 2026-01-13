@@ -1,0 +1,26 @@
+{
+  "name": "productivity-bot",
+  "version": "1.0.0",
+  "description": "Telegram бот для повышения продуктивности",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "stop": "pkill -f 'node index.js' || true",
+    "restart": "npm run stop && sleep 1 && npm start"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "productivity"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "telegraf": "^4.16.3",
+    "dotenv": "^16.4.5",
+    "better-sqlite3": "^11.6.0"
+  }
+}
+
